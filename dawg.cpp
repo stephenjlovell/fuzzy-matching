@@ -51,8 +51,6 @@ namespace levenshtein {
 	  return this->id;
   }
 
-
-
   // This method returns a unique string made up of the char values and IDs of each child node that is connected to this->DawgNode
   std::string DawgNode::signature() const {
     std::vector<std::string> edges;  // local vector<> object.  Overloads public map<> object edges.
@@ -166,7 +164,8 @@ namespace levenshtein {
   }
   
   //-------------------------------------------------------------------------------------------------//
-  //	Extend class to provide methods for approximate matching:                                    //
+  //  Copyright (c) 2013 Steve Lovell                                                                //
+  //  Extend class to provide methods for approximate matching:                                      //
   //-------------------------------------------------------------------------------------------------//
 
   //This method reads in a query term and returns a vector containing all strings matching the query within edit distance k.

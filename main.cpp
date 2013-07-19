@@ -1,3 +1,8 @@
+
+//  Copyright (c) 2013 Steve Lovell   
+
+// this module provides  
+
 #include "dawg.h"
 #include "Benchmarks.h"
 #include <iostream>
@@ -31,8 +36,6 @@ int main(){
 	std::cout << "Building DAWG..." << std::endl;
 	start = std::clock();
 	levenshtein::Dawg DAWG = levenshtein::Dawg(vecDictionary);
-	// what needs to change in initialization of vecDictionary in order to be able to pass this parameter 
-	// by reference, as in Dawg(&vecDictionary) 
 	DAWG.finish();
 	t1 = (std::clock()-start) / double(CLOCKS_PER_SEC);
 
@@ -105,9 +108,8 @@ int main(){
 	std::cout << "Recursive Levenshtein-based matching: " << t4 << "  Per word: " << t4 / (double(i)) << std::endl;
 	delete Recursive_benchmark;
 
- 	return 0;
-  // Unhandled exception at 0x00EA4EDF in Levenshtein_Automata.exe: 0xC0000005: Access violation reading location 0xFEEEFEEE.
-  // Could be an issue with destructor Dawg::~Dawg trying to delete this->root
+ 	return 0;  // Unhandled exception at 0x00EA4EDF in Levenshtein_Automata.exe: 0xC0000005: Access violation reading location 0xFEEEFEEE.
+               // Could be an issue with destructor Dawg::~Dawg trying to delete this->root
 }
 
 
